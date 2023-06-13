@@ -6,6 +6,7 @@
   --accent-color: #db0000;
   --primary-color: #f2f2f2;
   --secondary-color: #202020;
+  --app-bar-height: 60px;
 }
 
 * {
@@ -26,6 +27,7 @@ body {
 */
 
 .app-bar {
+  height: var(--app-bar-height);
   padding: 8px 16px;
   background-color: var(--primary-color);
   display: grid;
@@ -70,13 +72,14 @@ body {
 
 .app-bar .app-bar__navigation {
   position: absolute;
-  top: 50px;
+  top: 100%;
   left: -180px;
   width: 150px;
-  transition: left all 0.3s;
+  transition: all 0.3s;
   padding: 8px;
   background-color: var(--primary-color);
   overflow: hidden;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .app-bar .app-bar__navigation.open {
