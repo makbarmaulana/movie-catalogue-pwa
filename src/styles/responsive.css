@@ -15,6 +15,7 @@
   .app-bar .app-bar__navigation {
     position: static;
     width: 100%;
+    box-shadow: unset;
   }
 
   .app-bar .app-bar__navigation ul li {
@@ -34,6 +35,11 @@
 
   .movie {
     grid-template-columns: auto 1fr;
+    gap: 18px 32px;
+  }
+
+  .movie .movie__poster {
+    max-width: 400px;
   }
 
   .movie .movie__title {

@@ -201,10 +201,10 @@ main {
 
 .movie .movie__poster {
   width: 100%;
-  max-width: 400px;
 }
 
 .movie .movie__info h4 {
+  min-width: 300px;
   margin: 8px 0;
 }
 
