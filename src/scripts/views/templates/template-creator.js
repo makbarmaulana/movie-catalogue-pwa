@@ -5,6 +5,7 @@ const createMovieDetailTemplate = (movie) => `
   <img class="movie__poster"
     src="${CONFIG.BASE_IMAGE_URL + movie.poster_path}"
     alt="${movie.title}"
+    loading="lazy"
   />
 
   <div class="movie__info">
@@ -30,7 +31,9 @@ const createMovieItemTemplate = (movie) => `
     <div class="movie-item__header">
       <img class="movie-item__header__poster"
       alt="${movie.title}"
-      src="${movie.backdrop_path ? CONFIG.BASE_IMAGE_URL + movie.backdrop_path : 'https://picsum.photos/id/666/800/450?grayscale'}">
+      src="${movie.backdrop_path ? CONFIG.BASE_IMAGE_URL + movie.backdrop_path : 'https://picsum.photos/id/666/800/450?grayscale'}"
+      loading="lazy"
+      />
       <div class="movie-item__header__rating">
         <p>
           ⭐️
@@ -52,4 +55,21 @@ const createMovieItemTemplate = (movie) => `
   </div>
 `;
 
-export { createMovieItemTemplate, createMovieDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this movie" id="likeButton" class="like">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this movie" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createMovieItemTemplate,
+  createMovieDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};
